@@ -28,12 +28,12 @@ jobs:
       GOOME_BACKEND: test
     steps:
       - uses: actions/checkout@v4
-      - uses: ilammy/msvc-dev-cmd@v1
+      - uses: step-security/msvc-dev-cmd@v1
         if: runner.os == 'Windows'
-      - uses: leafo/gh-actions-lua@v11
+      - uses: leafo/gh-actions-lua@v13
         with:
           luaVersion: ${{ matrix.lua }}
-      - uses: leafo/gh-actions-luarocks@v5
+      - uses: leafo/gh-actions-luarocks@v6
       - name: install
         run: luarocks install goome-*.rockspec
       - name: run on the test backend
