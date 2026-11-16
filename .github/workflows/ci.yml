@@ -44,9 +44,10 @@ jobs:
           luarocks config lua_dir "$(cygpath -w "$PWD/.lua")"
           echo "LUA_PATH=$(luarocks path --lr-path | tr -d '\r');;" >> "$GITHUB_ENV"
           echo "LUA_CPATH=$(luarocks path --lr-cpath | tr -d '\r');;" >> "$GITHUB_ENV"
-          dirname "$(command -v cl)" >> "$GITHUB_PATH"
       - name: install
-        run: luarocks install goome-*.rockspec
+        run: |
+          if [ "$RUNNER_OS" = Windows ]; then export PATH="$(dirname "$(command -v cl)"):$PATH"; fi
+          luarocks install goome-*.rockspec
       - name: run on the test backend
         run: |
           mkdir -p shots
