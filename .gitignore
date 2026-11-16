@@ -1,0 +1,8 @@
+lua_modules/
+.luarocks/
+*.so
+*.dll
+*.dylib
+*.o
+shots*/
+*.ppm
