@@ -1,0 +1,32 @@
+name: update-goome
+
+on:
+  schedule:
+    - cron: '25 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-goome
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.repository == 'goome-ui/goome-app-template-lua'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.BOT_TOKEN || github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+          fetch-depth: 0
+          token: ${{ secrets.BOT_TOKEN || github.token }}
+      - uses: leafo/gh-actions-lua@v13
+        with:
+          luaVersion: "5.4"
+      - uses: leafo/gh-actions-luarocks@v6
+      - name: bump goome
+        run: bash .github/update-goome.sh
