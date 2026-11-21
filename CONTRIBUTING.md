@@ -26,7 +26,7 @@ Bugs in goome itself go to <a href="https://github.com/goome-ui/lua-goome">lua-g
 A bot checks every PR and closes it with a comment if it hits any of these. Fix it and open a new one.<br> <br>
 • PRs that arent against <b>dev</b><br>
 • Anything in <code>.github/</code><br>
-• <code>goome-0.5.3-1.rockspec</code> (or any <code>.rockspec</code>), its a straight copy from a <a href="https://github.com/goome-ui/lua-goome/releases">lua-goome release</a> and decides what luarocks builds<br>
+• <code>goome-0.5.5-1.rockspec</code> (or any <code>.rockspec</code>), its a straight copy from a <a href="https://github.com/goome-ui/lua-goome/releases">lua-goome release</a> and decides what luarocks builds<br>
 • <code>LICENSE</code><br> <br>
 Renaming or moving any of those counts too. Need one changed? <a href="https://github.com/goome-ui/goome-app-template-lua/issues">Open an issue</a>.
 </p>

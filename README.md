@@ -59,11 +59,11 @@ It swaps "My Goome App" and friends for your name everywhere, files too, and lea
 <br>
 
 <p align="center">
-You need Lua 5.4 or LuaJIT, <a href="https://luarocks.org/">LuaRocks</a> and a C compiler (gcc, clang, or Visual Studio / mingw on windows). goome isnt on the luarocks.org server, so <code>goome-0.5.3-1.rockspec</code> in here is the one from the <a href="https://github.com/goome-ui/lua-goome/releases">lua-goome release</a>. LuaRocks grabs v0.5.3 with git and builds it once, that takes a few seconds.
+You need Lua 5.4 or LuaJIT, <a href="https://luarocks.org/">LuaRocks</a> and a C compiler (gcc, clang, or Visual Studio / mingw on windows). goome isnt on the luarocks.org server, so <code>goome-0.5.5-1.rockspec</code> in here is the one from the <a href="https://github.com/goome-ui/lua-goome/releases">lua-goome release</a>. LuaRocks grabs v0.5.5 with git and builds it once, that takes a few seconds.
 </p>
 
 ```sh
-luarocks install --local goome-0.5.3-1.rockspec
+luarocks install --local goome-0.5.5-1.rockspec
 eval "$(luarocks path)"          # on windows run luarocks path and do what it prints
 lua main.lua
 ```
